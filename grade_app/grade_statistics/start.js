@@ -16,7 +16,7 @@ mongoose.connection
     .on('error', (err) => {
         console.log(`Connection error: ${err.message}`);
     });
-if mongoose.
+
 require('./models/grades.js');
 const app = require('./app');
 const server = app.listen(3000, () => {
