@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  h2 Add Grades
+  p add a new grade:
+  -data = data || {}
+
+  if errors
+    ul.my-errors
+      for error in errors
+        li= error.msg
+
+  form(action="/add" method="POST")
+    label(for="date") Date:
+    input(
+        type="date"
+        id="date"
+        name="date"
+        class="form-control"
+        value=data.date
+    )
+
+    label(for="module") Modul:
+    input(
+      type="text"
+      id="module"
+      name="module"
+      class="form-control"
+      value=data.module
+      )
+
+    label(for="grade") Note:
+    input(
+        type="integer"
+        id="grade"
+        name="grade"
+        class="form-control"
+        value=data.grade
+    )
+
+    input(type="submit" value="Submit" class="btn btn-lg btn-primary btn-block btn-dark")

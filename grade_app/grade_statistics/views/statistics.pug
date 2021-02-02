@@ -1,0 +1,50 @@
+extends layout
+
+block content
+
+  h2 Statistics
+  if max.length
+    .row
+      .col-sm
+        h5 highest Grade
+        table.listing-table.table-dark.table-striped
+          tr
+            th date
+            th module
+            th grade
+          each grade in max
+            tr
+              td= moment(grade.date).format('DD.MM.YYYY')
+              td= grade.module
+              td= grade.grade
+      .col-sm
+        h5 lowest Grade
+        table.listing-table.table-dark.table-striped
+          tr
+            th date
+            th module
+            th grade
+          each grade in min
+
+            tr
+              td= moment(grade.date).format('DD.MM.YYYY')
+              td= grade.module
+              td= grade.grade
+    p
+    .row
+      .col-sm
+        h5 average Grade
+        table.listing-table.table-dark.table-striped
+          tr
+            th.sortable avg grade
+          each grade in avg
+            td= Math.round((grade.avg + Number.EPSILON) * 100) / 100
+      .col-sm
+        h5 number of grades
+        table.listing-table.table-dark.table-striped
+          tr
+            th.sortable avg grade
+          tr
+            td= cnt
+  else
+    p no grades added yet :(

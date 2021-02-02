@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h2 Recorded Grades
+
+  if grades.length
+    table.listing-table.table-dark.table-striped
+      tr
+        th.sortable date
+        th.sortable module
+        th.sortable grade
+      each grade in grades
+        tr
+          td= moment(grade.date).format('DD.MM.YYYY')
+          td= grade.module
+          td= grade.grade
+  else
+    p No added grades yet :(
+

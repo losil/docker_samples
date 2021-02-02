@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title= `${title}`
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/styles.css')
+    link(href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css" rel="stylesheet")
+    script(src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js")
+    script(src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js")
+    script(src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table-locale-all.min.js")
+  body(padding-top: 70px)
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+      a.navbar-brand(href="./") Grade Statistics App
+      button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+      div.collapse.navbar-collapse(id="navbarNavAltMarkup")
+        a.nav-item.active
+        a.nav-item.active.nav-link(href="/add") Add Grades
+        a.nav-item.active.nav-link(href="/grades") List Grades
+        a.nav-item.active.nav-link(href="/statistics") Statistics
+
+    div(height: 100px)
+
+    block content
+
+    div.footer.fixed-bottom.text-center © silvan.loser@css.ch
+
